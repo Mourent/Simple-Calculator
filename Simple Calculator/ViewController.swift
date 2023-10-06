@@ -32,7 +32,16 @@ class ViewController: UIViewController {
         let pisahHuruf = Array(working)
         let panjangWorking: Int = working.count - 1
         
-        if(pisahHuruf[panjangWorking] == "+" || pisahHuruf[panjangWorking] == "-" || pisahHuruf[panjangWorking] == "*" || pisahHuruf[panjangWorking] == "/"){
+        if(panjangWorking == -1){
+            let alert = UIAlertController(
+            title: "Invalid Input", message: "Calculator unable to do math based on input", preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "Okay", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        
+        tesError = true
+        }
+        else if(pisahHuruf[panjangWorking] == "+" || pisahHuruf[panjangWorking] == "-" || pisahHuruf[panjangWorking] == "*" || pisahHuruf[panjangWorking] == "/"){
                 let alert = UIAlertController(
                 title: "Invalid Input", message: "Calculator unable to do math based on input", preferredStyle: .alert
                 )
